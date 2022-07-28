@@ -53,6 +53,8 @@ public class OwnerController {
 		Owner own = ownerRepository.findById(ownForm.getId()).get();
 		own.setName(ownForm.getName());
 		own.setAddress(ownForm.getAddress());
+		own.setTel(ownForm.getTel());
+		own.setEmail(ownForm.getEmail());
 		ownerRepository.save(own);
 		model.addAttribute("owner", own);
 		return "owner/save";
