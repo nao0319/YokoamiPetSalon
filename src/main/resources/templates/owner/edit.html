@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorate="~{/common/layout}">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="style.css"  type="text/css">
+<title>Yokoami/edit</title>
+</head>
+<body>
+	<section layout:fragment="contentsss"> 
+	<h1>Owner Edit</h1>
+	<form th:action="@{update}" method="POST" th:object="${owner}">
+		<input type="hidden" name="id" th:value="*{id}" /> 
+		id: <input type="text" name="id" th:value="*{id}" disabled="true" />
+		<br /> 
+		name:
+		<input type="text" name="name" th:value="*{name}" />
+		<br /> 
+		address:<input type="text" name="address" th:value="*{address}" />
+		<br />
+		tel:<input type="text" name="tel" th:value="*{tel}" />
+		<br />
+		email:<input type="text" name="email" th:value="*{email}" />
+		<br />
+		<button type="submit">送信</button>
+	</form>
+
+
+	</section>
+</body>
+</html>

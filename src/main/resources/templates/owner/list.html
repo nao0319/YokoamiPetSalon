@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorate="~{/common/layout}">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="style.css"  type="text/css">
+<title>Yokoami Customer List</title>
+</head>
+<body>
+<section layout:fragment="contentsss"> 
+  <h1>Customer List</h1>
+  <table border="1">
+    <tr>
+      <th>ID</th>
+      <th>名前</th>
+      <th>住所</th>
+      <th>電話</th>
+      <th>email</th>
+    </tr>
+    <tr th:each="owner:${owners}" th:object="${owner}">
+      <td th:text="*{id}"></td>
+      <td th:text="*{name}"></td>
+      <td th:text="*{address}"></td>
+      <td th:text="*{tel}"></td>
+      <td th:text="*{email}"></td>
+      <td><a th:href="@{edit(id=*{id})}">更新</a></td>
+      <!--<td><a th:href="@{delete(no=*{id})}">削除</a></td>-->
+    </tr>
+  </table>
+  <a th:href="@{new}">New</a>
+ </section>
+</body>
+</html>

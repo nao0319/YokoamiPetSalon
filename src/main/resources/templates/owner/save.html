@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>employee/save</title>
+</head>
+<body th:object="${owner}">
+	<section layout:fragment="contentsss"> 
+	<h1>Owner Saved</h1>
+	id:
+	<span th:text="*{id}"></span>
+	<br /> name:
+	<span th:text="*{name}"></span>
+	<br /> address:
+	<span th:text="*{address}"></span>
+	<br />tel:
+	<span th:text="*{tel}"></span>
+	<br />email:
+	<span th:text="*{email}"></span>
+	<br />
+	<hr />
+	<a th:href="@{list}">一覧</a>
+	</section>
+</body>
+</html>

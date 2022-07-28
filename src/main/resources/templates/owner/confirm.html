@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorate="~{/common/layout}">
+<head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="style.css"  type="text/css">
+<title>Yokoami Confirm</title>
+</head>
+<body th:object="${owner}">
+	<section layout:fragment="contentsss"> 
+	<form th:action="@{/owner/save}" method="POST">
+		ID：<span th:text="*{id}"></span>
+		<input type="hidden" name="id" th:value="*{id}" />
+		名前：<span th:text="*{name}"></span>
+		<input type="hidden" name="name" th:value="*{name}" />
+		住所：<span th:text="*{address}"></span>
+		<input type="hidden" name="address" th:value="*{address}" />
+		電話：<span th:text="*{tel}"></span>
+		<input type="hidden" name="tel" th:value="*{tel}" />
+		email：<span th:text="*{email}"></span>
+		<input type="hidden" name="email" th:value="*{email}" />
+		</br>
+		<button type="submit">登録</button>
+	</form>
+	</section>
+</body>
+</html>
