@@ -60,6 +60,13 @@ public class OwnerController {
 		return "owner/save";
 	}
 	
+	@RequestMapping("delete")
+	public String delete(
+			@RequestParam("id") Integer id) {
+		ownerRepository.deleteById(id);
+		return "redirect:/owner/list";
+	}
+	
 	@RequestMapping("save")
 	public String save(Model model,
 			@ModelAttribute("owner") @Validated Owner own) {
